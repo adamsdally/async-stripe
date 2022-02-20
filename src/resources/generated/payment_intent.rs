@@ -26,6 +26,11 @@ pub struct PaymentIntent {
     /// The minimum amount is $0.50 US or [equivalent in charge currency](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts).
     /// The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
     pub amount: i64,
+    
+    /// String representing the object’s type. Objects of the same type share the same value.
+    /// value is "payment_intent" retrievable with publishable key
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub object: Option<Box<String>>,
 
     /// Amount that can be captured from this PaymentIntent.
     #[serde(skip_serializing_if = "Option::is_none")]
