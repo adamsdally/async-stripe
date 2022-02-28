@@ -131,12 +131,18 @@ pub enum EventType {
     OrderReturnUpdated,
     #[serde(rename = "payment_intent.amount_capturable_updated")]
     PaymentIntentAmountCapturableUpdated,
+    #[serde(rename = "payment_intent.canceled")]
+    PaymentIntentCanceled,
     #[serde(rename = "payment_intent.created")]
     PaymentIntentCreated,
     #[serde(rename = "payment_intent.payment_failed")]
     PaymentIntentPaymentFailed,
     #[serde(rename = "payment_intent.requires_capture")]
     PaymentIntentRequiresCapture,
+    #[serde(rename = "payment_intent.processing")]
+    PaymentIntentProcessing,
+    #[serde(rename = "payment_intent.requires_action")]
+    PaymentIntentRequiresAction,
     #[serde(rename = "payment_intent.succeeded")]
     PaymentIntentSucceeded,
     #[serde(rename = "payment_method.attached")]
