@@ -13,9 +13,6 @@ pub struct ExchangeRateRates {}
 pub struct IssuingAuthorizationAmountDetails {}
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct NotificationEventData {}
-
-#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct PaymentMethodDetailsCardInstallmentsPlan {}
 
 #[derive(Clone, Debug, Deserialize, Serialize)]

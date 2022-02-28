@@ -7,7 +7,8 @@ use serde_derive::{Deserialize, Serialize};
 use crate::config::{Client, Response};
 use crate::ids::EventId;
 use crate::params::{Expand, List, Object, RangeQuery, Timestamp};
-use crate::resources::NotificationEventData;
+use crate::resources::webhook_events::EventObject;
+//use crate::resources::NotificationEventData;
 
 /// The resource representing a Stripe "NotificationEvent".
 ///
@@ -32,7 +33,7 @@ pub struct Event {
     /// Measured in seconds since the Unix epoch.
     pub created: Timestamp,
 
-    pub data: NotificationEventData,
+    pub data: Option<Box<EventObject>>,
 
     /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
     pub livemode: bool,
@@ -74,6 +75,9 @@ impl Object for Event {
         "event"
     }
 }
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct NotificationEventData {}
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct NotificationEventRequest {
