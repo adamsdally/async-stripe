@@ -207,7 +207,7 @@ pub struct EventData {
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
-#[serde(tag = "object", rename_all = "snake_case")]
+#[serde(rename_all = "snake_case")]
 pub enum EventObject {
     Account(Account),
     ApplicationFee(ApplicationFee),

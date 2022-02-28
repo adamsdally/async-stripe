@@ -33,7 +33,7 @@ pub struct Event {
     /// Measured in seconds since the Unix epoch.
     pub created: Timestamp,
 
-    pub data: Option<Box<EventObject>>,
+    pub data: Option<Box<Vec<EventObject>>>,
 
     /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
     pub livemode: bool,
